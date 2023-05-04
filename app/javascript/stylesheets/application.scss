@@ -2,5 +2,8 @@
 @use '~bootstrap/scss/bootstrap';
 @use '~@fortawesome/fontawesome-free/scss/fontawesome';
 
+@import "common";
+
 // pages
-@import "top"
+@import "top";
+@import "users/sign_up";
