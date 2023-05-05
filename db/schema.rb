@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2023_05_03_043332) do
     t.string "name", limit: 100, default: "", null: false
     t.string "self_introduction", limit: 500
     t.integer "sex", default: 0, null: false
+    t.string "img_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
