@@ -1,15 +1,8 @@
 <div class="topPage">
   <nav class="nav">
     <ul>
-      <li class="presonIcon">
-        <%= link_to user_path(current_user) do %>
-          <i class="far fa-user"></i>
-        <% end %>
-      </li>
-      <li class="appIcon">
-        <!--action: "○○"検索-->
-        <%= link_to image_tag("cat-hand-icon.png"), action: "index" %>
-      </li>
+      <li class="personIcon"><%= link_to(content_tag(:i, "", class: 'fas fa-2x fa-user'), user_path(current_user.id)) %></li>
+      <li class="appIcon"><%= link_to image_tag("cat-hand-icon.png"), action: "index" %></li>
     </ul>
   </nav>
   <div id="tinderslide">
@@ -18,26 +11,29 @@
         <!--検索する-->
         <li data-user_id="<%= user.id %>">
           <div class="userName"><%= user.name %></div>
-          <%= image_tag user.img_name.url size: "400x400" %>
+          <%= image_tag user.img_name.url %>
+          <div class="like"></div>
           <div class="dislike"></div>
         </li>
       <% end %>
     </ul>
     <div class="noUser">近くにお相手がいません。</div>
   </div>
-  <div class="action" id="actionBtnArea">
-    <%= link_to "#", class: "disLike" do %>
+  <div class="actions" id="actionBtnArea">
+    <%= link_to "#", class: "dislike" do %>
       <i class="fas fa-times fa-2x"></i>
     <% end %>
     <%= link_to "#", class: "like" do %>
-      <i class="fas fa-heart"></i>
+      <i class="fas fa-heart fa-2x"></i>
     <% end %>
   </div>
 </div>
 <script>
-  $("#tinderslide").jTinder();
-  $('.actions .like, .actions .dislike').click(function(e) {
-    e.preventDefault();
-    $('#tinderslide').jTinder($(this).attr('class'));
+  $(document).on(function () {
+    $("#tinderslide").jTinder();
+    $('.actions .like, .actions .dislike').click(function(e){
+      e.preventDefault();
+      $("#tinderslide").jTinder($(this).attr('class'));
+    });
   });
 </script>

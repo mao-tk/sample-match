@@ -14,7 +14,7 @@ html, body {
 #tinderslide {
   position: relative;
   background: #fff;
-  width: 95%;
+  width: 90vw;
   height: 70vh;
   max-width: 600px;
   margin: 0 auto;
@@ -108,7 +108,7 @@ html, body {
 /* Like & dislike badge images */
 #tinderslide .like,
 #tinderslide .dislike {
-    background: image-url("liked.png") no-repeat scroll 0 0;
+    // background: image-url("liked.png") no-repeat scroll 0 0;
     opacity: 0;
     height: 80px;
     position: absolute;
@@ -129,7 +129,7 @@ html, body {
 #tinderslide .dislike {
     right: 45px;
     left: auto;
-    background: image-url("nope.png") no-repeat scroll 0 0;
+    // background: image-url("nope.png") no-repeat scroll 0 0;
 }
 
 /* Image container */
