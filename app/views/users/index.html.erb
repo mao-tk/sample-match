@@ -11,7 +11,7 @@
         <!--検索する-->
         <li data-user_id="<%= user.id %>">
           <div class="userName"><%= user.name %></div>
-          <%= image_tag user.img_name.url %>
+          <%= image_tag user.img_name.url, size: "400x400" %>
           <div class="like"></div>
           <div class="dislike"></div>
         </li>
@@ -29,11 +29,10 @@
   </div>
 </div>
 <script>
-  $(document).on(function () {
-    $("#tinderslide").jTinder();
-    $('.actions .like, .actions .dislike').click(function(e){
-      e.preventDefault();
-      $("#tinderslide").jTinder($(this).attr('class'));
-    });
+  let jTinder;
+  $("#tinderslide").jTinder();
+  $('.actions .like, .actions .dislike').click(function(e){
+    e.preventDefault();
+    $("#tinderslide").jTinder($(this).attr('class'));
   });
 </script>
