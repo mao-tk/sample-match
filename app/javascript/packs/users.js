@@ -1,3 +1,4 @@
+
 $(document).on("change", "#file_photo", function(e) {
   // ユーザーのコンピュータで読み込んだファイルを保持
   let reader;

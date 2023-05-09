@@ -10,7 +10,7 @@ import "channels"
 
 import "jquery";
 // window.$ = window.jQuery = require('jquery');
-global.$ = jQuery;
+// global.$ = jQuery;
 
 import "popper.js";
 import "bootstrap";
